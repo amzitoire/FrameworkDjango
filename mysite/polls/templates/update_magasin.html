@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block 'css' %}
+{% endblock %}
+{% block title %}
+    Formulaire magassin
+{% endblock %}
+{%block 'content' %}
+<div class="container">
+    <div class="row justify-content-center align">
+        <div class="col-md-6">
+            <form class="form-horizontal" method="post" action="" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block 'js'%}
+ 
+{% endblock%}

@@ -1,0 +1,118 @@
+{% extends 'base.html'%}
+
+{% block 'css' %}
+    <style type="text/css">
+        {% comment %} body {
+            background : blue;
+        } {% endcomment %}
+    </style>
+{% endblock %}
+{% block title %}
+    homepage 
+{% endblock %}
+{%block 'content' %}
+<div class="container-fluid" > 
+
+    <div class="container">
+    <div class="row">
+    {% for person in persons %}
+    <div class="card text-left col-3">
+     <img class="card-img-top" src="holder.js/100px180/" alt="">
+     <div class="card-body">
+        <h4 class="card-title">person <strong>{{ person.id }}</strong></h4>
+        <p> Name is : <strong>{{ person.name }}</strong> </p>
+        <p> Sex is : <strong>{{ person.sex }}</strong> </p>
+        <p> Age is : <strong>{{ person.age }}</strong></p>
+        <p>Country is : <strong>{{ person.country }}</strong> </p>
+    </div>
+    <div class="container">
+        <a name="" id="" class="btn btn-outline-primary col-12 my-2" href="{{ person.get_update_url }}" role="button">Update Person</a>
+    </div>
+    </div>
+    {%endfor %} 
+    <br>
+    </div>
+    </div>
+    <hr>
+
+
+    <h1> Magasin </h1>
+    
+    <div class="container">
+        <div class="row">
+    {% for magasin in magasins %}
+    <div class="card text-left col-3">
+        <img class="card-img-top" src="holder.js/100px180/" alt="">
+        <div class="card-body">
+           <h4 class="card-title">magasin <strong>{{ magasin.id }}</strong></h4>
+           <p> Name is : <strong>{{ magasin.name }}</strong> </p>
+           <p> country is : <strong>{{ magasin.country }}</strong> </p>
+           <p> created at is : <strong>{{ magasin.created_at }}</strong></p>
+           <p>Updated at is : <strong>{{ magasin.updated_at }}</strong> </p>
+       </div>
+       <div class="container">
+        <a name="" id="" class="btn btn-primary" href="{{ magasin.get_update_url }}" role="button">Update magasin</a>
+    </div>
+    </div>
+       {%endfor %} 
+       <br>
+       </div>
+    </div>
+       <hr>
+
+    <h1>Profile magasin</h1>
+
+    <div class="container">
+        <div class="row">
+    {% for profileMagasin in profileMagasins %}
+    <div class="card text-left col-3">
+        <img class="card-img-top" src="holder.js/100px180/" alt="">
+        <div class="card-body">
+           <h4 class="card-title">profile magasin <strong>{{ profileMagasin.id }}</strong></h4>
+           <p> Email is : <strong>{{ profileMagasin.email }}</strong> </p>
+           <p> Phone is : <strong>{{ profileMagasin.phone }}</strong> </p>
+           <p> created at: <strong>{{ profileMagasin.created_at}}</strong></p>
+           <p>updated at : <strong>{{ profileMagasin.updated_at }}</strong> </p>
+           <p>magasin : <strong>{{ profileMagasin.magasin }}</strong> </p>
+       </div>
+       <div class="container">
+           <a name="" id="" class="btn btn-primary"  href="{{ profileMagasin.get_update_url }}" role="button">Update Profile magasin</a>
+       </div>
+    </div>
+       {%endfor %} 
+       <br>
+       </div>
+    </div>
+       <hr>
+       <h1> Produit </h1>
+    
+       <div class="container">
+           <div class="row">
+       {% for produit in produits %}
+       <div class="card text-left col-3">
+           <img class="card-img-top" src="{{produit.image}}" alt="{{produit.image}}">
+           <div class="card-body">
+            <h4 class="card-title">Produit <strong>{{ produit.id }}</strong></h4>
+            <p> Name is : <strong>{{ produit.name }}</strong> </p>
+            <p> country is : <strong>{{ produit.country }}</strong> </p>
+            <p> price is : <strong>{{ produit.price }}</strong> </p>
+            <p> created at is : <strong>{{ produit.created_at }}</strong></p>
+            <p>Updated at is : <strong>{{ produit.updated_at }}</strong> </p>
+          </div>
+          <div class="container">
+           <a name="" id="" class="btn btn-primary" href="{{ produit.get_update_url }}" role="button">Update magasin</a>
+       </div>
+       </div>
+          {%endfor %} 
+          <br>
+          </div>
+       </div>
+          <hr>
+
+</div>
+{% endblock %}
+{% block 'js'%}
+ 
+{% endblock%}
+
+  
