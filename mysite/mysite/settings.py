@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'polls',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4' 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
