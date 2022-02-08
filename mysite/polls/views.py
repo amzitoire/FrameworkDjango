@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 from polls.models import *
 from polls.forms import *
 
